@@ -9,7 +9,11 @@ import {
   NavbarCollapse,
   NavbarLink,
   NavbarToggle,
+  TextInput,
 } from "flowbite-react";
+import { IoMdSearch } from "react-icons/io";
+import { DarkThemeToggle } from "flowbite-react";
+
 
 
 
@@ -18,7 +22,7 @@ function Navigation(){
     let avatar = './src/assets/avatar.jpg'
 return(
       <Navbar fluid rounded>
-        <NavbarBrand href="https://flowbite-react.com">
+        <NavbarBrand href="/">
         <>
           <img src={icon} className="mr-3 h-6 sm:h-9" alt="Logo" />
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">uniess cards</span>
@@ -45,14 +49,18 @@ return(
           <NavbarToggle />
         </div>
         <NavbarCollapse>
-          <NavbarLink href="#" active>
+          <NavbarLink href="/" active>
             Home
           </NavbarLink>
-          <NavbarLink href="#">About</NavbarLink>
+          <NavbarLink href="/About">About</NavbarLink>
           <NavbarLink href="#">Services</NavbarLink>
           <NavbarLink href="#">Pricing</NavbarLink>
           <NavbarLink href="#">Contact</NavbarLink>
         </NavbarCollapse>
+        <NavbarBrand>
+          <TextInput rightIcon={IoMdSearch}/>
+          </NavbarBrand>
+          <DarkThemeToggle/>
       </Navbar>
     );
   }
